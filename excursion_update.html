@@ -34,8 +34,13 @@
           </div>
           <div class="mb-3">
             <label for="dificultad">Dificultad</label>
-            <input type="text" name="dificultad" id="dificultad" v-model="dificultad">
+            <select name="dificultad" id="dificultad" v-model="dificultad" class="form-select">
+              <option value="alta">Alta</option>
+              <option value="media">Media</option>
+              <option value="baja">Baja</option>
+            </select>
           </div>
+          
           <div class="mb-3">
             <label for="imagen">Imagen</label>
             <input type="text" name="imagen" id="imagen" v-model="imagen">  
