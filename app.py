@@ -14,7 +14,7 @@ db= SQLAlchemy(app)   #crea el objeto db de la clase SQLAlquemy
 ma=Marshmallow(app)   #crea el objeto ma de de la clase Marshmallow
 
 from controladores.excursion_controlador import *
-
+from controladores.usuario_controlador import *
 # programa principal *******************************
 if __name__=='__main__':  
     app.run(debug=True, port=5000)   # ejecuta el servidor Flask en el puerto 5000

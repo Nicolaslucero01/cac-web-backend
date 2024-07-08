@@ -45,6 +45,8 @@ def create_usuario():
     #print(request.json)  # request.json contiene el json que envio el cliente
     nombre=request.json['nombre']
     clave=request.json['clave']
+    nivel=request.json['nivel']
+    acciones=request.json['acciones']
     new_usuario=Usuario(nombre,clave,nivel,acciones)
     db.session.add(new_usuario)
     db.session.commit() # confirma el alta
