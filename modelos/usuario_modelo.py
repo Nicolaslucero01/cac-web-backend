@@ -5,11 +5,11 @@ from sqlalchemy.orm import declarative_base, relationship
 class Usuario(db.Model):   # la clase Producto hereda de db.Model de SQLAlquemy   
     id=db.Column(db.Integer, primary_key=True)   #define los campos de la tabla
     nombre=db.Column(db.String(100))
-    contrasenia=db.Column(db.Integer)
+    clave=db.Column(db.Integer)
     
-    def __init__(self,nombre,contrasenia): #crea el  constructor de la clase
+    def __init__(self,nombre,clave): #crea el  constructor de la clase
         self.nombre=nombre # no hace falta el id porque lo crea sola mysql por ser auto_incremento
-        self.contrasenia=contrasenia
+        self.clave=clave
         
 
 

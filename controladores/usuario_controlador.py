@@ -6,7 +6,7 @@ from modelos.usuario_modelo import  *
 
 class UsuarioSchema(ma.Schema):
     class Meta:
-        fields=('id','nombre','contrasenia')
+        fields=('id','nombre','clave')
 
 
 usuario_schema=UsuarioSchema()  # El objeto producto_schema es para traer un producto
@@ -44,8 +44,8 @@ def delete_usuario(id):
 def create_usuario():
     #print(request.json)  # request.json contiene el json que envio el cliente
     nombre=request.json['nombre']
-    contrasenia=request.json['contrasenia']
-    new_usuario=Usuario(nombre,contrasenia)
+    clave=request.json['clave']
+    new_usuario=Usuario(nombre,clave)
     db.session.add(new_usuario)
     db.session.commit() # confirma el alta
     return usuario_schema.jsonify(new_usuario)
@@ -56,7 +56,7 @@ def update_usuario(id):
     usuario=Usuario.query.get(id)
     #excursion=request.json['id']
     usuario.nombre=request.json['nombre']
-    usuario.contrasenia=request.json['contrasenia']
+    usuario.clave=request.json['clave']
     db.session.commit()    # confirma el cambio
     return usuario_schema.jsonify(usuario)    # y retorna un json con el producto
  
