@@ -12,10 +12,7 @@ const { createApp } = Vue
         id:0,
         nombre:"", 
         clave:"",
-        nivel:"",
-        
-        
-        
+        nivel:""       
     }  
     },
     methods: {
