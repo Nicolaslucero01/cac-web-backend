@@ -2,8 +2,8 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        excursiones:[],
-        url:'http://localhost:5000/excursiones', 
+        usuarios:[],
+        url:'http://localhost:5000/usuarios', 
    // si el backend esta corriendo local  usar localhost 5000(si no lo subieron a pythonanywhere)
        // url:'http://mcerda.pythonanywhere.com/productos',   // si ya lo subieron a pythonanywhere
         error:false,
@@ -11,12 +11,9 @@ const { createApp } = Vue
         /*atributos para el guardar los valores del formulario */
         id:0,
         nombre:"", 
-        duracion:"",
-        descripcion:"",
-        dificultad:"",
-        imagen:"",
-        cupos:0,
-        precio:0,
+        clave:"",
+        nivel:"",
+        
         
         
     }  
@@ -26,7 +23,7 @@ const { createApp } = Vue
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    this.excursiones = data;
+                    this.usuarios = data;
                     this.cargando=false
                 })
                 .catch(err => {
@@ -47,17 +44,14 @@ const { createApp } = Vue
                 })
         },
         grabar(){
-            let excursion = {
+            let usuario = {
                 nombre:this.nombre,
-                duracion: this.duracion,
-                descripcion: this.descripcion,
-                dificultad: this.dificultad,
-                imagen:this.imagen,
-                cupos:this.cupos,
-                precio:this.precio
+                clave: this.clave,
+                nivel: this.nivel
+               
             }
             var options = {
-                body:JSON.stringify(excursion),
+                body:JSON.stringify(usuario),
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 redirect: 'follow'
@@ -65,7 +59,7 @@ const { createApp } = Vue
             fetch(this.url, options)
                 .then(function () {
                     alert("Registro grabado")
-                    window.location.href = "./excursiones.html";  // recarga productos.html
+                    window.location.href = "./usuarios.html";  // recarga productos.html
                 })
                 .catch(err => {
                     console.error(err);
