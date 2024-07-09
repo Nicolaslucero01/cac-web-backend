@@ -6,7 +6,7 @@ from modelos.usuario_modelo import  *
 
 class UsuarioSchema(ma.Schema):
     class Meta:
-        fields=('id','nombre','clave','nivel','acciones')
+        fields=('id','nombre','clave','nivel')
 
 
 usuario_schema=UsuarioSchema()  # El objeto producto_schema es para traer un producto
