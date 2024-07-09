@@ -7,12 +7,12 @@ class Usuario(db.Model):   # la clase Producto hereda de db.Model de SQLAlquemy
     nombre=db.Column(db.String(255))
     clave=db.Column(db.String(255))
     nivel=db.Column(db.String(50))
-    acciones=db.Column(db.String(50))
+    
     def __init__(self,nombre,clave): #crea el  constructor de la clase
         self.nombre=nombre # no hace falta el id porque lo crea sola mysql por ser auto_incremento
         self.clave=clave
         self.nivel=nivel
-        self.acciones=acciones
+        
 
 
 with app.app_context():

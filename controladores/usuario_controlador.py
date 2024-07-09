@@ -46,8 +46,8 @@ def create_usuario():
     nombre=request.json['nombre']
     clave=request.json['clave']
     nivel=request.json['nivel']
-    acciones=request.json['acciones']
-    new_usuario=Usuario(nombre,clave,nivel,acciones)
+   
+    new_usuario=Usuario(nombre,clave,nivel)
     db.session.add(new_usuario)
     db.session.commit() # confirma el alta
     return usuario_schema.jsonify(new_usuario)
@@ -60,7 +60,7 @@ def update_usuario(id):
     usuario.nombre=request.json['nombre']
     usuario.clave=request.json['clave']
     usuario.nivel=request.json['nivel']
-    usuario.acciones=request.json['acciones']
+    
     db.session.commit()    # confirma el cambio
     return usuario_schema.jsonify(usuario)    # y retorna un json con el producto
  
