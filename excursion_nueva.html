@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Excursion Nueva</title>
+  <title>Excursion Nuevo</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,39 +16,35 @@
   <main>
     <div class="container" id="app">
        <form  style="background-color: aliceblue;margin:10px auto ; width: 400px; padding: 20px;">
-        <h1>Alta de Excursion</h1>
+        <h1>Alta de excursion</h1>
         <div class="mb-3">
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" id="nombre" v-model="nombre">
         </div>
         <div class="mb-3">
-          <label for="duracion">Duracion</label>
-          <input type="text" name="duracion" id="duracion" v-model="duracion">
-        </div>
+          <label for="descripcion">Descripción</label>
+          <textarea name="descripcion" id="descripcion" v-model="descripcion"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="duracion">Duración</label>
+            <input type="text" name="duracion" id="duracion" v-model="duracion">
+          </div>
+          <div class="mb-3">
+            <label for="dificultad">Dificultad</label>
+            <input type="text" name="dificultad" id="dificultad" v-model="dificultad">
+          </div>
+          <div class="mb-3">
+            <label for="cupos">Cupos</label>
+            <input type="number" name="cupos" id="cupos" v-model="cupos">
+          </div>
         <div class="mb-3">
-          <label for="descripcion">Descripcion</label>
-          <input type="text" name="descripcion" id="descripcion" v-model="descripcion">
-        </div>
-        <div class="mb-3">
-          <label for="dificultad">Dificultad</label>
-          <select name="dificultad" id="dificultad" v-model="dificultad" class="form-select">
-            <option value="alta">Alta</option>
-            <option value="media">Media</option>
-            <option value="baja">Baja</option>
-          </select>
+          <label for="precio">Precio</label>
+          <input type="number" name="precio" id="precio" v-model="precio">
         </div>
         <div class="mb-3">
           <label for="imagen">Imagen</label>
           <input type="text" name="imagen" id="imagen" v-model="imagen">
           <img width="100" :src="imagen" alt="">
-        </div>
-        <div class="mb-3">
-          <label for="cupos">Cupos</label>
-          <input type="number" name="cupos" id="cupos" v-model="cupos">
-        </div>
-        <div class="mb-3">
-          <label for="precio">Precio</label>
-          <input type="number" name="precio" id="precio" v-model="precio">
         </div>
           <button type="button" class="btn btn-success" v-on:click="grabar()">Grabar</button>
       </form>

@@ -1,23 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>Catamarca - Tu portal de viaje para descubrir y disfrutar.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
     <header id="header">
-        <!-- place navbar here -->
+        
+        
     </header>
     <main>
         <div id="app" class="container">
             <h1>Excursiones</h1>
             <br>
-            <a  class="btn btn-primary" href="excursion_nueva.html">Nueva</a>
+            <a  class="btn btn-primary" href="excursion_nueva.html">Nuevo</a>
             <br><br>
             <div v-if="error">
-                <p>Lo sentimos , ........</p>
+                <p>Lo sentimos , se produjo un error</p>
             </div>
             <div v-else>
                 <section v-if="cargando">
@@ -26,32 +29,29 @@
                 </section>
                 <section v-else>
                     <div class="table-responsive">
-                        <table class="table table-bordered">
+                        <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Nombre</th>
-                                    <th scope="col">Duracion</th>
-                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Duración</th>
                                     <th scope="col">Dificultad</th>
-                                    <th scope="col">Imagen</th>
                                     <th scope="col">Cupos</th>
                                     <th scope="col">Precio</th>
-                                    
+                                    <th scope="col">Imagen</th>
+                                    <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class=""  v-for="excursion in excursiones">
                                     <td scope="row">{{excursion.id}}</td>
                                     <td>{{excursion.nombre}}</td>
-                                    <td>{{excursion.duracion}}</td>
                                     <td>{{excursion.descripcion}}</td>
+                                    <td>{{excursion.duracion}}</td>
                                     <td>{{excursion.dificultad}}</td>
-                                    <td>{{excursion.imagen}}</td>
                                     <td>{{excursion.cupos}}</td>
                                     <td>{{excursion.precio}}</td>
-                                    
-                                  
                                     <td>
                                         <img width="60"  :src="excursion.imagen" :alt="excursion.nombre">
                                     </td>
