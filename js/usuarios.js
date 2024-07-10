@@ -3,7 +3,7 @@ createApp({
     data() {
         return {
             usuarios: [],
-            url: 'http://localhost:5000/usuarios', 
+            url: 'https://natsanabria.pythonanywhere.com/usuarios', 
             // si el backend esta corriendo local usar localhost 5000 (si no lo subieron a pythonanywhere)
             // url: 'http://mcerda.pythonanywhere.com/productos',   // si ya lo subieron a pythonanywhere
             error: false,
